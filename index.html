@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Speed</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800;900&display=swap);
+
+      html {
+        height: 100vh;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("./picture1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .speed {
+        border-radius: 10px;
+        background-color: rgb(204, 204, 204, 0.5);
+        transition: all 0.6s;
+      }
+      .speed:hover {
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+      }
+      .mt-3 {
+        overflow: 0;
+        border: none;
+        border-radius: 10px;
+      }
+      select:focus {
+        outline: 0;
+      }
+      input {
+        outline: none;
+        border: 0;
+        border-radius: 10px;
+      }
+      .modalBtn {
+        background: linear-gradient(50deg, #de1f11, #18363e);
+        width: 400px;
+        height: 411px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+        position: absolute;
+      }
+      .gameOver {
+        color: aliceblue;
+        font-style: italic;
+        font-size: 40px;
+        margin-bottom: 30px;
+      }
+      .hidden {
+        display: none;
+      }
+
+      .para {
+        color: azure;
+        font-size: 25px;
+        font-style: italic;
+        margin-bottom: 30px;
+      }
+    </style>
+
+    <div class="modalBtn hidden">
+      <h3 class="gameOver">Game over</h3>
+      <p class="para"></p>
+      <img
+        class="reset"
+        src="./rotate-right-solid.svg"
+        alt=""
+        width="50"
+        height="50"
+      />
+    </div>
+
+    <div style="width: 400px" class="speed container text-center p-4">
+      <h1>Typing Speed</h1>
+      <select id="select" class="mt-3 mb-3 p-3 bg-info text-white">
+        <option value="5">Easy</option>
+        <option value="3">Medium</option>
+        <option value="2">Hard</option>
+      </select>
+      <h2 class="mt-5 mb-4" id="title"></h2>
+
+      <input class="mb-3 fs-5" type="text" id="input" />
+      <h5>Score:<span id="score">0</span></h5>
+      <h5>Time: <span id="time">00:10</span></h5>
+    </div>
+
+    <script src="./word.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
